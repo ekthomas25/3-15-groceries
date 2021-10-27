@@ -21,7 +21,9 @@ $(document).ready(function() {
     let orderedArray = listArray.sort();
 
     orderedArray.forEach(function(element) {
-      $("ul").append("<li>" + element + "</li>");
+      if (element.trim().length === 0) {
+        return null;
+      } $("ul").append("<li>" + element + "</li>");
     });
   });
 });
